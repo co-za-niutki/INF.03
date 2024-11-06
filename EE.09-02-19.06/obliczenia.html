@@ -25,12 +25,29 @@
           <label for="litry">Ile litrów</label><br />
           <input id="litry" type="number" />
           <br />
-          <input type="submit" />
+          <input type="button" value="OBLICZ" onclick="oblicz()" />
         </form>
+        <div id="wynik"></div>
       </section>
       <section id="left"><a href="kwerendy.txt">Pobierz kwerendy</a></section>
       <section id="right"><img src="samochod.png" alt="samochód" /></section>
     </main>
     <footer><p>Stronę opracował: 00000000000</p></footer>
+    <script>
+      function oblicz() {
+        var rodzaj = document.getElementById("rodzaj").value;
+        var litry = document.getElementById("litry").value;
+        var koszt = 0;
+
+        if (rodzaj == "1") {
+          koszt = litry * 4;
+        } else if (rodzaj == "2") {
+          koszt = litry * 3.5;
+        }
+
+        document.getElementById("wynik").innerHTML =
+          "Koszt paliwa: " + koszt + " zł";
+      }
+    </script>
   </body>
 </html>
