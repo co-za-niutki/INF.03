@@ -46,11 +46,26 @@
           $record = mysqli_fetch_array($result);
 
           echo '<p>'.$record[0].'</p>';
-          mysqli_close($conn);
         ?>
     </section>
     <section id="prawy">
-      <!--TODO: Skrypt2-->
+      <?php
+        $query = "SELECT id, imie, nazwisko FROM pracownicy WHERE id=2";
+        $result = mysqli_query($conn,$query);
+        $record = mysqli_fetch_array($result);
+
+        echo  '<img src="'.$record['id'].'.jpg" alt="pracownik"/>';
+        echo '<h2>'.$record['imie'].' '.$record['nazwisko'].'</h2>';
+
+        $query = "SELECT pracownicy.id, stanowiska.nazwa, stanowiska.opis FROM pracownicy, stanowiska WHERE pracownicy.stanowiska_id=stanowiska.id AND pracownicy.id=2";
+        $result = mysqli_query($conn,$query);
+        $record = mysqli_fetch_array($result);
+        
+        echo '<h4>'.$record[1].'</h4>';
+        echo '<h5>'.$record[2].'</h5>';
+          
+          mysqli_close($conn);
+      ?>
     </section>
     <footer>
       Autorem aplikacji jest: 0000000000
