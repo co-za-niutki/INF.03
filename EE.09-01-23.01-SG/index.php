@@ -11,7 +11,7 @@
       <h1>Akta Pracownicze</h1>
       <!--TODO: Skrypt 1-->
       <?php
-        $conn = mysqli_connect("localhost", "root", "", "firma20");
+        $conn = mysqli_connect("localhost", "root", "", "firma");
         $query = "SELECT imie, nazwisko, adres, miasto, czyRODO, CzyBadania FROM pracownicy WHERE id=2";
         $result = mysqli_query($conn,$query);
         $record = mysqli_fetch_array($result);
