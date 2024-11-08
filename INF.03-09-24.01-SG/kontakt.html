@@ -22,20 +22,20 @@
             <table>
               <tr>
                 <td>Imię:</td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="imie" /></td>
               </tr>
               <tr>
                 <td>Nazwisko:</td>
-                <td><input type="text" /></td>
+                <td><input type="text" id="nazwisko" /></td>
               </tr>
               <tr>
                 <td>E-mail:</td>
-                <td><input type="email" /></td>
+                <td><input type="email" id="email" /></td>
               </tr>
               <tr>
                 <td>Zgłoszenie:</td>
                 <td>
-                  <select>
+                  <select id="usluga">
                     <option>naprawa komputerów</option>
                     <option>odzyskiwanie danych</option>
                     <option>wirusy</option>
@@ -53,21 +53,37 @@
               <tr>
                 <td></td>
                 <td>
-                  <!--TODO: Czyszczenie formularza-->
-                  <button>Czyść</button>
-                  <!--TODO: Skrypt-->
-                  <button onclick="wyslij()">Wyślij</button>
+                  <button type="reset">Czyść</button>
+                  <button type="button" onclick="wyslij()">Wyślij</button>
                 </td>
               </tr>
             </table>
             <hr />
+            <p id="wynik"></p>
           </form>
         </section>
         <section id="prawy"></section>
       </main>
       <footer>Autor: <i>0000000000000</i></footer>
     </div>
-    <!--TODO: Skrypt-->
-    <script></script>
+    <script>
+      function wyslij() {
+        let imie = document.getElementById("imie").value;
+        let nazwisko = document.getElementById("nazwisko").value;
+        let email = document.getElementById("email").value.toLowerCase();
+        let usluga = document.getElementById("usluga").value;
+        let kopia = document.getElementById("kopia").checked;
+
+        document.getElementById("wynik").innerHTML =
+          imie +
+          " " +
+          nazwisko +
+          "<br />" +
+          email +
+          "<br />" +
+          "Usługa: " +
+          usluga;
+      }
+    </script>
   </body>
 </html>
