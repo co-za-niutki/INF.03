@@ -1,0 +1,64 @@
+body {
+  font-family: Garamond;
+  text-align: center;
+}
+
+#l1,
+#l2,
+#l3 {
+  width: 72%;
+  float: left;
+}
+
+#l1 {
+  background-color: #795548;
+  font-size: 170%;
+}
+
+#l2 {
+  height: 400px;
+}
+
+#p1,
+#p2 {
+  background-color: #bcaaa4;
+  color: #795548;
+  height: 400px;
+  width: 28%;
+  float: right;
+}
+
+footer {
+  background-color: #795548;
+  color: white;
+  padding: 20px;
+  clear: both;
+}
+
+table {
+  margin: auto;
+  width: 80%;
+  border: solid 1px #795548;
+}
+
+tr:hover {
+  background-color: sienna;
+  color: white;
+}
+
+h4 {
+  font-size: 200%;
+}
+
+img {
+  padding: 20px;
+  border-radius: 40px;
+}
+
+a {
+  color: white;
+}
+
+input {
+  margin: 7px;
+}
