@@ -1,0 +1,66 @@
+* {
+  font-family: Cambria;
+}
+
+#l1,
+#l2 {
+  background-color: #e1bee7;
+  width: 25%;
+  float: left;
+}
+
+#l1 {
+  height: 400px;
+}
+#l2 {
+  height: 330px;
+}
+
+#p1,
+#p2 {
+  width: 75%;
+  font-size: 150%;
+  text-align: center;
+  float: right;
+}
+
+#p1 {
+  background-color: #9c64a6;
+  color: white;
+  height: 150px;
+  letter-spacing: 5px;
+}
+
+#p2 {
+  color: indigo;
+  height: 580px;
+}
+
+footer {
+  background-color: #9c64a6;
+  color: white;
+  padding: 10px;
+  clear: both;
+}
+
+h2 {
+  text-align: center;
+}
+
+ul {
+  list-style-type: circle;
+}
+
+img {
+  padding: 4px;
+  margin: 15px;
+}
+
+img:hover {
+  padding: 3px;
+  border: 1px dashed indigo;
+}
+
+#glowna {
+  padding: 25px;
+}
