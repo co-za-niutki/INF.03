@@ -21,7 +21,10 @@
         <input type="number" id="symbol" name="symbol" /><br />
         <button type="submit">AKCEPTUJ</button>
       </form>
-      <!--TODO: Skrypt1-->
+        <?php
+          $conn=mysqli_connect('localhost','root','','biblioteka');
+
+        ?>
     </section>
     <section id="srodek">
       <img src="biblioteka.png" alt="biblioteka" />
@@ -31,7 +34,17 @@
     <section id="prawy">
       <h4>Nasi czytelnicy:</h4>
       <ol>
-        <!--TODO: Skrypt2-->
+        <?php
+          $query="SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko ASC;";
+          $result=mysqli_query($conn,$query);
+
+          while($record=mysqli_fetch_array($result))
+          {
+            echo "<li>".$record["imie"]." ".$record["nazwisko"]."</ li>";
+          }
+
+          mysqli_close($conn);
+        ?>
       </ol>
     </section>
     <footer>
