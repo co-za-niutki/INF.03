@@ -12,7 +12,7 @@
     </header>
     <section id="lewy">
       <h4>Dodaj czytelnika</h4>
-      <form action="biblioteka.php" method="post">
+      <form method="post">
         <label for="imie">Imię: </label>
         <input type="text" id="imie" name="imie" /><br />
         <label for="nazwisko">Nazwisko: </label>
@@ -23,7 +23,16 @@
       </form>
         <?php
           $conn=mysqli_connect('localhost','root','','biblioteka');
+          if (isset($_POST['imie']) && isset($_POST['nazwisko']) && isset($_POST['symbol'])) {
+            $imie = $_POST['imie'];
+            $nazwisko = $_POST['nazwisko'];
+            $symbol = $_POST['symbol'];
 
+            echo `Dodano czytelnika $imie $nazwisko`;
+            $query = "INSERT INTO czytelnicy (imie, nazwisko, kod) VALUES ('$imie', '$nazwisko', $symbol)";
+            mysqli_query($conn, $query);
+            mysqli_close($conn);
+          }
         ?>
     </section>
     <section id="srodek">
@@ -35,10 +44,11 @@
       <h4>Nasi czytelnicy:</h4>
       <ol>
         <?php
-          $query="SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko ASC;";
-          $result=mysqli_query($conn,$query);
+          $conn=mysqli_connect('localhost','root','','biblioteka');
+          $query = "SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko ASC;";
+          $result = mysqli_query($conn,$query);
 
-          while($record=mysqli_fetch_array($result))
+          while($record = mysqli_fetch_array($result))
           {
             echo "<li>".$record["imie"]." ".$record["nazwisko"]."</ li>";
           }
