@@ -17,12 +17,12 @@
       <table>
         <?php
           $conn=mysqli_connect('localhost','root','','wynajem');
-          $query="SELECT * FROM pokoje";
-          $result=mysqli_query($conn,$query);
+          $sql="SELECT * FROM pokoje";
+          $result=mysqli_query($conn,$sql);
 
-          while($record=mysqli_fetch_array($result))
+          while($row=mysqli_fetch_array($result))
           {
-            echo "<tr><td>".$record[0]."</ td><td>".$record[1]."</ td><td>".$record[2]."</ td><tr>";
+            echo "<tr><td>".$row[0]."</ td><td>".$row[1]."</ td><td>".$row[2]."</ td><tr>";
           }
 
           mysqli_close($conn);

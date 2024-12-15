@@ -13,10 +13,10 @@
       <ol>
         <?php
           $conn = mysqli_connect("localhost", "root", "", "wedkowanie");
-          $query = "SELECT nazwa, akwen, wojewodztwo FROM ryby, lowisko WHERE ryby.id=lowisko.Ryby_id AND rodzaj=3";
-          $result = mysqli_query($conn,$query);
-          while ($record = mysqli_fetch_array($result)) {
-            echo '<li>'.$record["nazwa"]." pływa w rzece ".$record["akwen"].", ".$record["wojewodztwo"]."</li>";
+          $sql = "SELECT nazwa, akwen, wojewodztwo FROM ryby, lowisko WHERE ryby.id=lowisko.Ryby_id AND rodzaj=3";
+          $result = mysqli_query($conn,$sql);
+          while ($row = mysqli_fetch_array($result)) {
+            echo '<li>'.$row["nazwa"]." pływa w rzece ".$row["akwen"].", ".$row["wojewodztwo"]."</li>";
           };
           mysqli_close($conn);
         ?>
@@ -37,10 +37,10 @@
         </tr>
         <?php
           $conn = mysqli_connect("localhost", "root", "", "wedkowanie");
-          $query = "SELECT id, nazwa, wystepowanie FROM ryby WHERE styl_zycia=1";
-          $result = mysqli_query($conn,$query);
-          while ($record = mysqli_fetch_array($result)) {
-            echo '<tr><td>'.$record["id"].'</td><td>'.$record["nazwa"].'</td><td>'.$record["wystepowanie"].'</td></tr>';
+          $sql = "SELECT id, nazwa, wystepowanie FROM ryby WHERE styl_zycia=1";
+          $result = mysqli_query($conn,$sql);
+          while ($row = mysqli_fetch_array($result)) {
+            echo '<tr><td>'.$row["id"].'</td><td>'.$row["nazwa"].'</td><td>'.$row["wystepowanie"].'</td></tr>';
           };
           mysqli_close($conn);
         ?>

@@ -29,8 +29,8 @@
             $symbol = $_POST['symbol'];
 
             echo `Dodano czytelnika $imie $nazwisko`;
-            $query = "INSERT INTO czytelnicy (imie, nazwisko, kod) VALUES ('$imie', '$nazwisko', $symbol)";
-            mysqli_query($conn, $query);
+            $sql = "INSERT INTO czytelnicy (imie, nazwisko, kod) VALUES ('$imie', '$nazwisko', $symbol)";
+            mysqli_query($conn, $sql);
             mysqli_close($conn);
           }
         ?>
@@ -45,12 +45,12 @@
       <ol>
         <?php
           $conn=mysqli_connect('localhost','root','','biblioteka');
-          $query = "SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko ASC;";
-          $result = mysqli_query($conn,$query);
+          $sql = "SELECT imie, nazwisko FROM czytelnicy ORDER BY nazwisko ASC;";
+          $result = mysqli_query($conn,$sql);
 
-          while($record = mysqli_fetch_array($result))
+          while($row = mysqli_fetch_array($result))
           {
-            echo "<li>".$record["imie"]." ".$record["nazwisko"]."</ li>";
+            echo "<li>".$row["imie"]." ".$row["nazwisko"]."</ li>";
           }
 
           mysqli_close($conn);
