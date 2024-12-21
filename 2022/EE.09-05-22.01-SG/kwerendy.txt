@@ -1,0 +1,4 @@
+SELECT haslo FROM uzytkownicy portal WHERE login="Justyna"
+SELECT COUNT(*) FROM dane
+SELECT uzytkownicy.login, dane.rok_urodz, dane.przyjaciol, dane.hobby, dane.zdjecie FROM uzytkownicy, dane WHERE uzytkownicy.id=dane.id
+ALTER TABLE dane ADD stanowisko TEXT
