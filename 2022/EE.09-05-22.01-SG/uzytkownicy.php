@@ -33,7 +33,7 @@
       <h3>Wizytówka</h3>
       <div id="wizytowka">
         <?php
-          if (!empty($_POST["login"]) && !empty($_POST["haslo"])) {
+          if ($_POST["login"] != "" && $_POST["haslo"] != "") {
             $login = $_POST["login"];
             $haslo = sha1($_POST["haslo"]);
 
