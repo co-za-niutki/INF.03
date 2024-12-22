@@ -1,0 +1,4 @@
+SELECT nazwaPliku, podpis FROM zdjecia ORDER BY podpis ASC
+SELECT cel, dataWyjazdu FROM wycieczki WHERE dostepna=false
+SELECT wycieczki.cel, wycieczki.cena, zdjecia.podpis FROM wycieczki, zdjecia WHERE wycieczki.zdjecia_id=zdjecia.id AND wycieczki.cena>1300
+DROP TABLE uzytkownik
