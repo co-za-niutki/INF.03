@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Firma IT</title>
+    <link rel="stylesheet" href="styl.css" />
+    <link rel="icon" href="logo.png" type="image/png" />
+  </head>
+  <body>
+    <section id="kontener">
+      <section id="logo"><img src="logo.png" alt="firma it" /></section>
+      <section id="menu">
+        <a href="index.html">Strona Główna</a>
+        <a href="uslugi.html">Usługi</a>
+        <a href="kontakt.html">Kontakt</a>
+      </section>
+      <section id="baner">
+        <img src="animacja.gif" alt="Usługi informatyczne" />
+      </section>
+      <section id="main">
+        <h2>Kontakt</h2>
+        <table>
+          <tr>
+            <td>Imię:</td>
+            <td><input type="text" id="imie" /></td>
+          </tr>
+          <tr>
+            <td>Nazwisko:</td>
+            <td><input type="text" id="nazwisko" /></td>
+          </tr>
+          <tr>
+            <td>E-mail:</td>
+            <td><input type="email" id="email" /></td>
+          </tr>
+          <tr>
+            <td>Zgłoszenie:</td>
+            <td><textarea id="zgloszenie" rows="10" cols="40"></textarea></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <input type="checkbox" id="regulamin" />
+              <label for="regulamin">Zapoznałam/em się z regulaminem</label>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <button type="reset" onclick="resetuj()">Resetuj</button>
+              <button type="submit" onclick="wyslij()">Prześlij</button>
+            </td>
+          </tr>
+        </table>
+        <hr />
+        <p id="wynik"></p>
+      </section>
+      <section id="footer">Autor strony: 0000000000</section>
+    </section>
+    <script>
+      function resetuj() {
+        document.getElementById("imie").value = "";
+        document.getElementById("nazwisko").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("zgloszenie").value = "";
+        document.getElementById("regulamin").checked = false;
+      }
+
+      function wyslij() {
+        let regulamin = document.getElementById("regulamin").checked;
+        let wynik = document.getElementById("wynik");
+        if (regulamin) {
+          let imie = document.getElementById("imie").value.toUpperCase();
+          let nazwisko = document
+            .getElementById("nazwisko")
+            .value.toUpperCase();
+          let zgloszenie = document.getElementById("zgloszenie").value;
+
+          wynik.style.color = "navy";
+          wynik.innerHTML = `${imie} ${nazwisko}<br/>Treść Twojej sprawy: ${zgloszenie}`;
+        } else {
+          wynik.style.color = "red";
+          wynik.innerHTML = "Musisz  zapoznać  się  z  regulaminem";
+        }
+      }
+    </script>
+  </body>
+</html>
